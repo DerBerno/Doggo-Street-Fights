@@ -1,0 +1,626 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://cat 2.png" type="Texture" id=1]
+[ext_resource path="res://Tree2.png" type="Texture" id=2]
+[ext_resource path="res://Tree1.png" type="Texture" id=3]
+[ext_resource path="res://BG.png" type="Texture" id=4]
+[ext_resource path="res://PixelOperatorHB.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://doggo_2.png" type="Texture" id=6]
+[ext_resource path="res://Perks.gd" type="Script" id=7]
+[ext_resource path="res://sleep1.png" type="Texture" id=8]
+[ext_resource path="res://Panel.tres" type="Theme" id=9]
+[ext_resource path="res://Sun.png" type="Texture" id=10]
+[ext_resource path="res://Cloud1.png" type="Texture" id=11]
+[ext_resource path="res://LiterallyNothing.png" type="Texture" id=12]
+[ext_resource path="res://Cursor.png" type="Texture" id=13]
+[ext_resource path="res://PerksGroup.tres" type="ButtonGroup" id=14]
+[ext_resource path="res://Buttons.tres" type="Theme" id=15]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=4]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 0.933333, 0.745098, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.435294, 0.803922, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.752941, 0.341176, 0.341176, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="ButtonGroup" id=9]
+
+[node name="Perks" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="BG" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="BG"]
+margin_right = 1920.0
+margin_bottom = 1088.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="cat 2" type="Sprite" parent="BG"]
+position = Vector2( 1184, 928 )
+scale = Vector2( 8.5, 9.5 )
+texture = ExtResource( 1 )
+
+[node name="doggo_2" type="Sprite" parent="BG"]
+position = Vector2( 224, 928 )
+scale = Vector2( 10.5, 11.5 )
+texture = ExtResource( 6 )
+
+[node name="sleep1" type="Sprite" parent="BG"]
+position = Vector2( 1344, 864 )
+scale = Vector2( 6.75, 7.25 )
+texture = ExtResource( 8 )
+
+[node name="Tree1" type="Sprite" parent="BG"]
+position = Vector2( 544, 768 )
+scale = Vector2( 14.5, 14.5 )
+texture = ExtResource( 3 )
+
+[node name="Tree2" type="Sprite" parent="BG"]
+position = Vector2( 1728, 896 )
+scale = Vector2( 14.5, 14.5 )
+texture = ExtResource( 2 )
+
+[node name="Sun" type="Sprite" parent="BG"]
+position = Vector2( 192, 160 )
+scale = Vector2( 16.5, 14.5 )
+texture = ExtResource( 10 )
+
+[node name="Cloud1" type="Sprite" parent="BG"]
+position = Vector2( 352, 256 )
+scale = Vector2( 7.54, 10.1 )
+texture = ExtResource( 11 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 96.0
+margin_top = 96.0
+margin_right = 1824.0
+margin_bottom = 1056.0
+theme = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Perks" type="Label" parent="."]
+margin_left = 256.0
+margin_top = 128.0
+margin_right = 556.0
+margin_bottom = 249.0
+custom_fonts/font = SubResource( 1 )
+text = "PERKS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Node2D" parent="."]
+
+[node name="P1" type="Label" parent="Menu"]
+margin_left = 224.0
+margin_top = 288.0
+margin_right = 639.0
+margin_bottom = 329.0
+custom_fonts/font = SubResource( 3 )
+text = "Reach Gold III to unlock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CB1" type="CheckButton" parent="Menu/P1"]
+margin_left = -64.0
+margin_top = 5.0
+margin_right = -32.0
+margin_bottom = 35.0
+theme = SubResource( 4 )
+custom_icons/off = ExtResource( 12 )
+custom_icons/on_disabled = ExtResource( 12 )
+custom_icons/on = ExtResource( 12 )
+custom_icons/off_disabled = ExtResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+disabled = true
+group = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P2" type="Label" parent="Menu"]
+margin_left = 224.0
+margin_top = 352.0
+margin_right = 639.0
+margin_bottom = 393.0
+custom_fonts/font = SubResource( 3 )
+text = "Reach Gold II to unlock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CB2" type="CheckButton" parent="Menu/P2"]
+margin_left = -64.0
+margin_top = 5.0
+margin_right = -32.0
+margin_bottom = 35.0
+theme = SubResource( 4 )
+custom_icons/off = ExtResource( 12 )
+custom_icons/on_disabled = ExtResource( 12 )
+custom_icons/on = ExtResource( 12 )
+custom_icons/off_disabled = ExtResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+disabled = true
+group = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P3" type="Label" parent="Menu"]
+margin_left = 224.0
+margin_top = 416.0
+margin_right = 639.0
+margin_bottom = 457.0
+custom_fonts/font = SubResource( 3 )
+text = "Reach Gold I to unlock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CB3" type="CheckButton" parent="Menu/P3"]
+margin_left = -64.0
+margin_right = -32.0
+margin_bottom = 30.0
+rect_pivot_offset = Vector2( 32, 15 )
+theme = SubResource( 4 )
+custom_icons/off = ExtResource( 12 )
+custom_icons/on_disabled = ExtResource( 12 )
+custom_icons/on = ExtResource( 12 )
+custom_icons/off_disabled = ExtResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+disabled = true
+group = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P4" type="Label" parent="Menu"]
+margin_left = 224.0
+margin_top = 480.0
+margin_right = 701.0
+margin_bottom = 521.0
+custom_fonts/font = SubResource( 3 )
+text = "Reach Diamond III to unlock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CB4" type="CheckButton" parent="Menu/P4"]
+margin_left = -64.0
+margin_top = 5.0
+margin_right = -32.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 32, 15 )
+theme = SubResource( 4 )
+custom_icons/off = ExtResource( 12 )
+custom_icons/on_disabled = ExtResource( 12 )
+custom_icons/on = ExtResource( 12 )
+custom_icons/off_disabled = ExtResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+disabled = true
+group = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P5" type="Label" parent="Menu"]
+margin_left = 224.0
+margin_top = 544.0
+margin_right = 701.0
+margin_bottom = 585.0
+custom_fonts/font = SubResource( 3 )
+text = "Reach Diamond II to unlock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CB5" type="CheckButton" parent="Menu/P5"]
+margin_left = -64.0
+margin_top = 5.0
+margin_right = -32.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 32, 15 )
+theme = SubResource( 4 )
+custom_icons/off = ExtResource( 12 )
+custom_icons/on_disabled = ExtResource( 12 )
+custom_icons/on = ExtResource( 12 )
+custom_icons/off_disabled = ExtResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+disabled = true
+group = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P6" type="Label" parent="Menu"]
+margin_left = 224.0
+margin_top = 608.0
+margin_right = 701.0
+margin_bottom = 649.0
+custom_fonts/font = SubResource( 3 )
+text = "Reach Diamond I to unlock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CB6" type="CheckButton" parent="Menu/P6"]
+margin_left = -64.0
+margin_top = 5.0
+margin_right = -32.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 32, 15 )
+theme = SubResource( 4 )
+custom_icons/off = ExtResource( 12 )
+custom_icons/on_disabled = ExtResource( 12 )
+custom_icons/on = ExtResource( 12 )
+custom_icons/off_disabled = ExtResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+disabled = true
+group = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P7" type="Label" parent="Menu"]
+margin_left = 224.0
+margin_top = 672.0
+margin_right = 701.0
+margin_bottom = 713.0
+custom_fonts/font = SubResource( 3 )
+text = "Reach Legend III to unlock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CB7" type="CheckButton" parent="Menu/P7"]
+margin_left = -64.0
+margin_top = 5.0
+margin_right = -32.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 32, 15 )
+theme = SubResource( 4 )
+custom_icons/off = ExtResource( 12 )
+custom_icons/on_disabled = ExtResource( 12 )
+custom_icons/on = ExtResource( 12 )
+custom_icons/off_disabled = ExtResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+disabled = true
+group = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P8" type="Label" parent="Menu"]
+margin_left = 224.0
+margin_top = 736.0
+margin_right = 701.0
+margin_bottom = 777.0
+custom_fonts/font = SubResource( 3 )
+text = "Reach Legend II to unlock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CB8" type="CheckButton" parent="Menu/P8"]
+margin_left = -64.0
+margin_top = 5.0
+margin_right = -32.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 32, 15 )
+theme = SubResource( 4 )
+custom_icons/off = ExtResource( 12 )
+custom_icons/on_disabled = ExtResource( 12 )
+custom_icons/on = ExtResource( 12 )
+custom_icons/off_disabled = ExtResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+disabled = true
+group = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P9" type="Label" parent="Menu"]
+margin_left = 224.0
+margin_top = 800.0
+margin_right = 701.0
+margin_bottom = 841.0
+custom_fonts/font = SubResource( 3 )
+text = "Reach Legend I to unlock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CB9" type="CheckButton" parent="Menu/P9"]
+margin_left = -64.0
+margin_top = 5.0
+margin_right = -32.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 32, 15 )
+theme = SubResource( 4 )
+custom_icons/off = ExtResource( 12 )
+custom_icons/on_disabled = ExtResource( 12 )
+custom_icons/on = ExtResource( 12 )
+custom_icons/off_disabled = ExtResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+disabled = true
+group = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P10" type="Label" parent="Menu"]
+margin_left = 224.0
+margin_top = 864.0
+margin_right = 790.0
+margin_bottom = 905.0
+custom_fonts/font = SubResource( 3 )
+text = "Reach Challenger Rank to unlock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CB10" type="CheckButton" parent="Menu/P10"]
+margin_left = -64.0
+margin_top = 5.0
+margin_right = -32.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 32, 15 )
+theme = SubResource( 4 )
+custom_icons/off = ExtResource( 12 )
+custom_icons/on_disabled = ExtResource( 12 )
+custom_icons/on = ExtResource( 12 )
+custom_icons/off_disabled = ExtResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+disabled = true
+group = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Special Attack" type="Label" parent="."]
+margin_left = 1088.0
+margin_top = 128.0
+margin_right = 1883.0
+margin_bottom = 249.0
+custom_fonts/font = SubResource( 1 )
+text = "ABILITY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SA1" type="Label" parent="."]
+margin_left = 1056.0
+margin_top = 288.0
+margin_right = 1471.0
+margin_bottom = 384.0
+custom_fonts/font = SubResource( 3 )
+text = "Reach Silver to unlock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="CheckButton" parent="SA1"]
+margin_left = -64.0
+margin_top = 5.0
+margin_right = -32.0
+margin_bottom = 35.0
+theme = SubResource( 4 )
+custom_icons/off = ExtResource( 12 )
+custom_icons/on_disabled = ExtResource( 12 )
+custom_icons/on = ExtResource( 12 )
+custom_icons/off_disabled = ExtResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+disabled = true
+group = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SA2" type="Label" parent="."]
+margin_left = 1056.0
+margin_top = 416.0
+margin_right = 1471.0
+margin_bottom = 457.0
+custom_fonts/font = SubResource( 3 )
+text = "Reach Gold to unlock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="CheckButton" parent="SA2"]
+margin_left = -64.0
+margin_top = 5.0
+margin_right = -32.0
+margin_bottom = 35.0
+theme = SubResource( 4 )
+custom_icons/off = ExtResource( 12 )
+custom_icons/on_disabled = ExtResource( 12 )
+custom_icons/on = ExtResource( 12 )
+custom_icons/off_disabled = ExtResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+disabled = true
+group = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SA3" type="Label" parent="."]
+margin_left = 1056.0
+margin_top = 544.0
+margin_right = 1471.0
+margin_bottom = 585.0
+custom_fonts/font = SubResource( 3 )
+text = "Reach Diamond to unlock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="CheckButton" parent="SA3"]
+margin_left = -64.0
+margin_top = 5.0
+margin_right = -32.0
+margin_bottom = 35.0
+theme = SubResource( 4 )
+custom_icons/off = ExtResource( 12 )
+custom_icons/on_disabled = ExtResource( 12 )
+custom_icons/on = ExtResource( 12 )
+custom_icons/off_disabled = ExtResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+disabled = true
+group = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SA4" type="Label" parent="."]
+margin_left = 1056.0
+margin_top = 672.0
+margin_right = 1471.0
+margin_bottom = 713.0
+custom_fonts/font = SubResource( 3 )
+text = "Reach Legend to unlock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4" type="CheckButton" parent="SA4"]
+margin_left = -64.0
+margin_right = -32.0
+margin_bottom = 30.0
+theme = SubResource( 4 )
+custom_icons/off = ExtResource( 12 )
+custom_icons/on_disabled = ExtResource( 12 )
+custom_icons/on = ExtResource( 12 )
+custom_icons/off_disabled = ExtResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+disabled = true
+group = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SA5" type="Label" parent="."]
+margin_left = 1056.0
+margin_top = 800.0
+margin_right = 1471.0
+margin_bottom = 841.0
+custom_fonts/font = SubResource( 3 )
+text = "Reach Challenger to unlock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5" type="CheckButton" parent="SA5"]
+margin_left = -64.0
+margin_top = 5.0
+margin_right = -32.0
+margin_bottom = 35.0
+theme = SubResource( 4 )
+custom_icons/off = ExtResource( 12 )
+custom_icons/on_disabled = ExtResource( 12 )
+custom_icons/on = ExtResource( 12 )
+custom_icons/off_disabled = ExtResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+disabled = true
+group = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cursor" type="Sprite" parent="."]
+texture = ExtResource( 13 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 736.0
+margin_top = 960.0
+margin_right = 1090.0
+margin_bottom = 1008.0
+theme = ExtResource( 15 )
+text = " Accept & Return "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Menu/P1/CB1" to="." method="_on_CB1_pressed"]
+[connection signal="pressed" from="Menu/P2/CB2" to="." method="_on_CB2_pressed"]
+[connection signal="pressed" from="Menu/P3/CB3" to="." method="_on_CB3_pressed"]
+[connection signal="pressed" from="Menu/P4/CB4" to="." method="_on_CB4_pressed"]
+[connection signal="pressed" from="Menu/P5/CB5" to="." method="_on_CB5_pressed"]
+[connection signal="pressed" from="Menu/P6/CB6" to="." method="_on_CB6_pressed"]
+[connection signal="pressed" from="Menu/P7/CB7" to="." method="_on_CB7_pressed"]
+[connection signal="pressed" from="Menu/P8/CB8" to="." method="_on_CB8_pressed"]
+[connection signal="pressed" from="Menu/P9/CB9" to="." method="_on_CB9_pressed"]
+[connection signal="pressed" from="Menu/P10/CB10" to="." method="_on_CB10_pressed"]
+[connection signal="pressed" from="SA1/1" to="." method="_on_1_pressed"]
+[connection signal="pressed" from="SA2/2" to="." method="_on_2_pressed"]
+[connection signal="pressed" from="SA3/3" to="." method="_on_3_pressed"]
+[connection signal="pressed" from="SA4/4" to="." method="_on_4_pressed"]
+[connection signal="pressed" from="SA5/5" to="." method="_on_5_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://wings.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://eexx.tres" type="ButtonGroup" id=2]
+[ext_resource path="res://PixelOperatorHB.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+font_data = ExtResource( 3 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="1" type="AnimatedSprite" parent="."]
+position = Vector2( 286, 318 )
+scale = Vector2( 28.25, 28.25 )
+frames = ExtResource( 1 )
+animation = "01"
+
+[node name="2" type="AnimatedSprite" parent="."]
+position = Vector2( 704, 320 )
+scale = Vector2( 28.25, 28.25 )
+frames = ExtResource( 1 )
+animation = "02"
+frame = 1
+
+[node name="3" type="AnimatedSprite" parent="."]
+position = Vector2( 1184, 320 )
+scale = Vector2( 28.25, 28.25 )
+frames = ExtResource( 1 )
+animation = "03"
+frame = 1
+
+[node name="w1" type="CheckButton" parent="."]
+margin_left = 160.0
+margin_top = 448.0
+margin_right = 256.0
+margin_bottom = 512.0
+rect_scale = Vector2( 2, 2 )
+group = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="w2" type="CheckButton" parent="."]
+margin_left = 608.0
+margin_top = 448.0
+margin_right = 704.0
+margin_bottom = 512.0
+rect_scale = Vector2( 2, 2 )
+group = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="w3" type="CheckButton" parent="."]
+margin_left = 1088.0
+margin_top = 448.0
+margin_right = 1184.0
+margin_bottom = 512.0
+rect_scale = Vector2( 2, 2 )
+group = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="l1" type="Label" parent="."]
+margin_left = 512.0
+margin_top = 448.0
+margin_right = 949.0
+margin_bottom = 484.0
+custom_fonts/font = SubResource( 1 )
+text = "Reach Diamond Rank to unlock"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="l3" type="Label" parent="."]
+margin_left = 992.0
+margin_top = 448.0
+margin_right = 1429.0
+margin_bottom = 484.0
+custom_fonts/font = SubResource( 1 )
+text = "Reach Legend Rank to unlock"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="l2" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 448.0
+margin_right = 469.0
+margin_bottom = 484.0
+custom_fonts/font = SubResource( 1 )
+text = "Reach Gold Rank to unlock"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

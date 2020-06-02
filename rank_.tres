@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=19 format=2]
+
+[ext_resource path="res://Ranks/b1.png" type="Texture" id=1]
+[ext_resource path="res://Ranks/s1.png" type="Texture" id=2]
+[ext_resource path="res://Ranks/s2.png" type="Texture" id=3]
+[ext_resource path="res://Ranks/s3.png" type="Texture" id=4]
+[ext_resource path="res://Ranks/g1.png" type="Texture" id=5]
+[ext_resource path="res://Ranks/b2.png" type="Texture" id=6]
+[ext_resource path="res://Ranks/b3.png" type="Texture" id=7]
+[ext_resource path="res://Ranks/g2.png" type="Texture" id=8]
+[ext_resource path="res://Ranks/d1.png" type="Texture" id=9]
+[ext_resource path="res://Ranks/g3.png" type="Texture" id=10]
+[ext_resource path="res://Ranks/l2.png" type="Texture" id=11]
+[ext_resource path="res://Ranks/l1.png" type="Texture" id=12]
+[ext_resource path="res://Ranks/l3.png" type="Texture" id=13]
+[ext_resource path="res://Ranks/d2.png" type="Texture" id=14]
+[ext_resource path="res://Ranks/d3.png" type="Texture" id=15]
+[ext_resource path="res://Challenger3.png" type="Texture" id=16]
+[ext_resource path="res://Challenger1.png" type="Texture" id=17]
+[ext_resource path="res://Challenger2.png" type="Texture" id=18]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 8 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Gold",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Silver",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "Diamond",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Legend",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Bronze",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "Challenger",
+"speed": 5.0
+} ]
