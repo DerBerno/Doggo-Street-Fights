@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://PixelOperatorHB.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Menu.gd" type="Script" id=2]
@@ -114,6 +114,21 @@ animations = [ {
 "name": "default",
 "speed": 0.2
 } ]
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 2 )
@@ -289,7 +304,6 @@ position = Vector2( 96, 128 )
 scale = Vector2( 10.1818, 10.1818 )
 frames = ExtResource( 5 )
 animation = "Legend"
-frame = 1
 playing = true
 
 [node name="Rank" type="Label" parent="."]
@@ -316,6 +330,7 @@ __meta__ = {
 position = Vector2( 1824, 96 )
 scale = Vector2( 10.7917, 10.25 )
 frames = SubResource( 12 )
+frame = 1
 playing = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -532,6 +547,17 @@ text = "Delete Save Data"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Reset Panel" type="Button" parent="."]
+margin_left = 581.867
+margin_top = 668.12
+margin_right = 1110.87
+margin_bottom = 1030.12
+custom_styles/hover = SubResource( 21 )
+custom_styles/pressed = SubResource( 22 )
+custom_styles/focus = SubResource( 23 )
+custom_styles/disabled = SubResource( 24 )
+custom_styles/normal = SubResource( 25 )
 [connection signal="pressed" from="EXIT" to="." method="_on_EXIT_pressed"]
 [connection signal="pressed" from="Fullscreen" to="." method="_on_Fullscreen_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
@@ -544,3 +570,4 @@ __meta__ = {
 [connection signal="pressed" from="Cosm" to="." method="_on_Cosm_pressed"]
 [connection signal="pressed" from="Perks" to="." method="_on_Perks_pressed"]
 [connection signal="pressed" from="DeleteGame" to="." method="_on_DeleteGame_pressed"]
+[connection signal="pressed" from="Reset Panel" to="." method="_on_Reset_Panel_pressed"]
