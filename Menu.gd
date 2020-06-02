@@ -14,6 +14,8 @@ func _ready():
 	if OS.get_name() == "HTML5":
 		get_node("EXIT").visible = false
 	
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	
 	get_node("HSlider").value = Global.read_savegame("Vol1")
 	get_node("HSlider2").value = Global.read_savegame("Vol2")
 	get_node("HP").text = "Health: " + str(15 * Global.Strength)
