@@ -8,7 +8,38 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	Global.save("Rank", Global.Rank)
+	if Global.Perk == 1:
+		get_node("Menu/P1/CB1").pressed = true
+	if Global.Perk == 2:
+		get_node("Menu/P2/CB2").pressed = true
+	if Global.Perk == 3:
+		get_node("Menu/P3/CB3").pressed = true
+	if Global.Perk == 4:
+		get_node("Menu/P4/CB4").pressed = true
+	if Global.Perk == 5:
+		get_node("Menu/P5/CB5").pressed = true
+	if Global.Perk == 6:
+		get_node("Menu/P6/CB6").pressed = true
+	if Global.Perk == 7:
+		get_node("Menu/P7/CB7").pressed = true
+	if Global.Perk == 8:
+		get_node("Menu/P8/CB8").pressed = true
+	if Global.Perk == 9:
+		get_node("Menu/P9/CB9").pressed = true
+	if Global.Perk == 10:
+		get_node("Menu/P10/CB10").pressed = true
+		
+	if Global.SpAttack == 1:
+		get_node("SA1/1").pressed = true
+	if Global.SpAttack == 2:
+		get_node("SA2/2").pressed = true
+	if Global.SpAttack == 3:
+		get_node("SA3/3").pressed = true
+	if Global.SpAttack == 4:
+		get_node("SA4/4").pressed = true
+	if Global.SpAttack == 5:
+		get_node("SA5/5").pressed = true
 		
 	if Global.Rank > 299:
 		get_node("SA1").text = "Regenerate Enery without sleeping"
@@ -87,51 +118,61 @@ func _process(delta):
 
 func _on_CB1_pressed():
 	Global.Perk = 1
+	Global.save("Perk",Global.Perk )
 	pass # Replace with function body.
 
 
 func _on_CB2_pressed():
 	Global.Perk = 2
+	Global.save("Perk",Global.Perk )
 	pass # Replace with function body.
 
 
 func _on_CB3_pressed():
 	Global.Perk = 3
+	Global.save("Perk",Global.Perk )
 	pass # Replace with function body.
 
 
 func _on_CB4_pressed():
 	Global.Perk = 4
+	Global.save("Perk",Global.Perk )
 	pass # Replace with function body.
 
 
 func _on_CB5_pressed():
 	Global.Perk = 5
+	Global.save("Perk",Global.Perk )
 	pass # Replace with function body.
 
 
 func _on_CB6_pressed():
 	Global.Perk = 6
+	Global.save("Perk",Global.Perk )
 	pass # Replace with function body.
 
 
 func _on_CB7_pressed():
 	Global.Perk = 7
+	Global.save("Perk",Global.Perk )
 	pass # Replace with function body.
 
 
 func _on_CB8_pressed():
 	Global.Perk = 8
+	Global.save("Perk",Global.Perk )
 	pass # Replace with function body.
 
 
 func _on_CB9_pressed():
 	Global.Perk = 9
+	Global.save("Perk",Global.Perk )
 	pass # Replace with function body.
 
 
 func _on_CB10_pressed():
 	Global.Perk = 10
+	Global.save("Perk",Global.Perk )
 	pass # Replace with function body.
 
 
@@ -142,24 +183,29 @@ func _on_Button_pressed():
 
 func _on_1_pressed():
 	Global.SpAttack = 1
+	Global.save("Ability",Global.SpAttack )
 	pass # Replace with function body.
 
 
 func _on_2_pressed():
 	Global.SpAttack = 2
+	Global.save("Ability",Global.SpAttack )
 	pass # Replace with function body.
 
 
 func _on_3_pressed():
 	Global.SpAttack = 3
+	Global.save("Ability",Global.SpAttack )
 	pass # Replace with function body.
 
 
 func _on_4_pressed():
 	Global.SpAttack = 4
+	Global.save("Ability",Global.SpAttack )
 	pass # Replace with function body.
 
 
 func _on_5_pressed():
 	Global.SpAttack = 5
+	Global.save("Ability",Global.SpAttack )
 	pass # Replace with function body.
