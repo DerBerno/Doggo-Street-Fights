@@ -181,10 +181,10 @@ animations = [ {
 "name": "Knife",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
-"name": "cat",
-"speed": 3.0
+"name": "Sleep",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 17 ) ],
 "loop": true,
@@ -196,52 +196,32 @@ animations = [ {
 "name": "Kill",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "Sleep",
+"frames": [ ExtResource( 5 ), ExtResource( 10 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "Fire",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "cat",
+"speed": 3.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 9 ) ],
 "loop": false,
 "name": "Fist",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 10 ), ExtResource( 5 ) ],
-"loop": false,
-"name": "Fire",
-"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=26]
 animations = [ {
-"frames": [ ExtResource( 26 ), ExtResource( 25 ), ExtResource( 26 ) ],
-"loop": false,
-"name": "Tailkick",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 32 ), ExtResource( 31 ) ],
 "loop": true,
 "name": "Sleep",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 20 ) ],
+"frames": [ ExtResource( 26 ), ExtResource( 25 ), ExtResource( 26 ) ],
 "loop": false,
-"name": "Snacc",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ), ExtResource( 22 ) ],
-"loop": true,
-"name": "Doggo",
-"speed": 2.0
-}, {
-"frames": [ ExtResource( 26 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 26 ) ],
-"loop": false,
-"name": "Fireball",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 26 ), ExtResource( 30 ), ExtResource( 30 ), ExtResource( 30 ), ExtResource( 26 ) ],
-"loop": false,
-"name": "Bepis",
+"name": "Tailkick",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 19 ), ExtResource( 23 ), ExtResource( 57 ), ExtResource( 23 ), ExtResource( 19 ) ],
@@ -249,22 +229,42 @@ animations = [ {
 "name": "Punch",
 "speed": 10.0
 }, {
+"frames": [ ExtResource( 24 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "Doggo",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 30 ), ExtResource( 30 ), ExtResource( 30 ), ExtResource( 26 ) ],
+"loop": false,
+"name": "Bepis",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 26 ) ],
 "loop": false,
 "name": "Thorns",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 20 ) ],
+"loop": false,
+"name": "Snacc",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 26 ) ],
+"loop": false,
+"name": "Fireball",
 "speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=27]
 animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "0ff",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 55 ), ExtResource( 56 ) ],
 "loop": true,
 "name": "hat2",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "0ff",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 50 ), ExtResource( 54 ) ],
@@ -638,6 +638,7 @@ position = Vector2( 1888, 32 )
 scale = Vector2( 5, 5 )
 frames = ExtResource( 44 )
 animation = "Challenger"
+frame = 1
 playing = true
 
 [node name="DoggoWings" type="AnimatedSprite" parent="."]
@@ -645,6 +646,7 @@ position = Vector2( 256, 576 )
 scale = Vector2( 26, 26 )
 frames = ExtResource( 45 )
 animation = "02"
+frame = 2
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -713,7 +715,6 @@ texture = ExtResource( 52 )
 position = Vector2( 960, 1120 )
 scale = Vector2( 19.25, 22.25 )
 frames = SubResource( 34 )
-frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true

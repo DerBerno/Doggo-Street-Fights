@@ -17,6 +17,9 @@ var SpAttack = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SpAttack = read_savegame("Ability")
+	Perk = read_savegame("Perk")
+	
 	if not savegame.file_exists(save_path):
 		dopopup = true
 		create_save()
@@ -27,7 +30,8 @@ func _ready():
 		save("Upgraded", 1)
 		save("Vol1", 100)
 		save("Vol2", 100)
-	
+		save("Perk", 0)
+		save("Ability", 0)
 	
 	Strength = (Global.read_savegame("Strength"))
 	Rank = (Global.read_savegame("Rank"))
@@ -59,6 +63,13 @@ func read_savegame(Name):
 	elif Name == "Vol2":
 		save("Vol2", 100)
 		return 100
+	elif Name == "Perk":
+		save("Perk", 0)
+		return 0
+	elif Name == "Ability":
+		save("Ability", 0)
+		return 0
+		
 func delete():
 	save("Strength", 1)
 	save("Rank", 0)
@@ -67,6 +78,18 @@ func delete():
 	save("Upgraded", 1)
 	save("Vol1", 100)
 	save("Vol2", 100)
+	
+func refresh():
+	Global.Strength = read_savegame("Strength")
+	Global.Rank = read_savegame("Rank")
+	Global.Attacks = read_savegame("Attacks")
+	Global.LabPoints = read_savegame("LabPoints")
+	Global.Upgraded = read_savegame("Upgraded")
+	Global.Vol1 = read_savegame("Vol1")
+	Global.Vol2 = read_savegame("Vol2")
+	Global.Perk = read_savegame("Perk")
+	Global.Ability = read_savegame("Ability")
+	
 	
 		
 	
