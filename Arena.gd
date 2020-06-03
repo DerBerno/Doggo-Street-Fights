@@ -209,6 +209,7 @@ func _ready():
 func _process(delta):
 	get_node("Clouds/C1/C1follow").unit_offset += 0.027 * delta * 0.5
 	get_node("Clouds/C1/C2follow").unit_offset += 0.05 * delta * 0.5
+	get_node("HeliPath/HeliFollow").unit_offset += 0.05 * delta
 	
 
 	#tween.interpolate_property($TextureRect, "modulate", Color(1,1,1), Color(0.5, 0.5, 0.5), 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
