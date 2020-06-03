@@ -80,10 +80,8 @@ func refresh():
 	Global.Attacks = read_savegame("Attacks")
 	Global.LabPoints = read_savegame("LabPoints")
 	Global.Upgraded = read_savegame("Upgraded")
-	Global.Vol1 = read_savegame("Vol1")
-	Global.Vol2 = read_savegame("Vol2")
 	Global.Perk = read_savegame("Perk")
-	Global.Ability = read_savegame("Ability")
+	
 	
 	
 	

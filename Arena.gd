@@ -319,7 +319,6 @@ func Delay(Time):
 
 func Turn(DoggoAction):
 	randomized = randi()%10 +1
-	print(str(randomized))
 	disable()
 	
 	if get_node("DoggoLife").value == 0 or get_node("CattoLife").value == 0:
@@ -584,3 +583,11 @@ func updateStats():
 	get_node("DoggoLife/LifeLabel").text = str(get_node("DoggoLife").value) 
 	get_node("CattoLife/LifeLabel").text = str(get_node("CattoLife").value) 
 	get_node("Energy/EnergyLabel").text = str(get_node("Energy").value) 
+
+
+func _on_AcceptDialog_mouse_entered():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+
+func _on_AcceptDialog_mouse_exited():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

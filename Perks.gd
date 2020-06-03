@@ -111,7 +111,7 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		get_node("Cursor").rotation_degrees += 1  * event.get_relative()[0]
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$Cursor.position = get_viewport().get_mouse_position()
 #	pass
 

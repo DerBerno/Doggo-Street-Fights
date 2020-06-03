@@ -12,6 +12,7 @@ var ResetCount = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.refresh()
 	if OS.get_name() == "HTML5":
 		get_node("EXIT").visible = false
 	
@@ -253,5 +254,6 @@ func _on_Reset_Panel_pressed():
 	ResetCount += 1
 	if ResetCount == 5:
 		get_node("DeleteGame").visible = true
+		$Debug.visible = true
 	
 
