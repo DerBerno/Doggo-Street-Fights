@@ -20,6 +20,8 @@ func reload_values():
 	$CenterContainer/ScrollContainer/Variables/Upgraded/LineEdit.text = str(Global.read_savegame("Upgraded"))
 	$CenterContainer/ScrollContainer/Variables/Volume1/LineEdit.text = str(Global.read_savegame("Vol1"))
 	$CenterContainer/ScrollContainer/Variables/Volume2/LineEdit.text = str(Global.read_savegame("Vol2"))
+	$CenterContainer/ScrollContainer/Variables/Perk/LineEdit.text = str(Global.read_savegame("Perk"))
+	$CenterContainer/ScrollContainer/Variables/Ability/LineEdit.text = str(Global.read_savegame("Ability"))
 
 
 func _on_Reset_pressed():
@@ -35,7 +37,7 @@ func _on_Quit_pressed():
 func _on_Save_pressed():
 	Errors = 0
 	if $"CenterContainer/ScrollContainer/Variables/Lab Points/LineEdit".text != null: 
-			if $"CenterContainer/ScrollContainer/Variables/Lab Points/LineEdit".text.is_valid_integer():
+			if $"CenterContainer/ScrollContainer/Variables/Lab Points/LineEdit".text.is_valid_float():
 				Global.save("LabPoints", int($"CenterContainer/ScrollContainer/Variables/Lab Points/LineEdit".text)) #Save User Entry
 			else:
 				
@@ -51,7 +53,7 @@ func _on_Save_pressed():
 	
 	
 	if $"CenterContainer/ScrollContainer/Variables/Rank/LineEdit".text != null: 
-			if $"CenterContainer/ScrollContainer/Variables/Rank/LineEdit".text.is_valid_integer():
+			if $"CenterContainer/ScrollContainer/Variables/Rank/LineEdit".text.is_valid_float():
 				Global.save("Rank", int($"CenterContainer/ScrollContainer/Variables/Rank/LineEdit".text)) #Save User Entry
 			else:
 				
@@ -59,7 +61,7 @@ func _on_Save_pressed():
 	
 	
 	if $"CenterContainer/ScrollContainer/Variables/Strength/LineEdit".text != null: 
-		if $"CenterContainer/ScrollContainer/Variables/Strength/LineEdit".text.is_valid_integer():
+		if $"CenterContainer/ScrollContainer/Variables/Strength/LineEdit".text.is_valid_float():
 			Global.save("Strength", int($"CenterContainer/ScrollContainer/Variables/Strength/LineEdit".text)) #Save User Entry
 		else:
 			
@@ -85,6 +87,21 @@ func _on_Save_pressed():
 			Global.save("Vol2", int($"CenterContainer/ScrollContainer/Variables/Volume2/LineEdit".text)) #Save User Entry
 		else:
 			Errors += 1
+	
+	
+	if $"CenterContainer/ScrollContainer/Variables/Perk/LineEdit".text != null: 
+		if $"CenterContainer/ScrollContainer/Variables/Perk/LineEdit".text.is_valid_integer():
+			Global.save("Perk", int($"CenterContainer/ScrollContainer/Variables/Perk/LineEdit".text)) #Save User Entry
+		else:
+			Errors += 1
+	
+	
+	if $"CenterContainer/ScrollContainer/Variables/Ability/LineEdit".text != null: 
+		if $"CenterContainer/ScrollContainer/Variables/Ability/LineEdit".text.is_valid_integer():
+			Global.save("Ability", int($"CenterContainer/ScrollContainer/Variables/Ability/LineEdit".text)) #Save User Entry
+		else:
+			Errors += 1
+	
 	
 	if Errors == 0:
 		$PopupSuccess/ConfirmationDialog.dialog_text = "Savedata saved at:" + Global.save_path 

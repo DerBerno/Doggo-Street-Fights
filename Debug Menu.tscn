@@ -19,18 +19,19 @@ __meta__ = {
 }
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer"]
-margin_left = 460.0
-margin_top = 139.0
-margin_right = 1460.0
-margin_bottom = 939.0
-rect_min_size = Vector2( 1000, 800 )
+margin_left = 459.0
+margin_top = 39.0
+margin_right = 1459.0
+margin_bottom = 1039.0
+rect_min_size = Vector2( 1000, 1000 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Variables" type="VBoxContainer" parent="CenterContainer/ScrollContainer"]
 margin_right = 904.0
-margin_bottom = 765.0
+margin_bottom = 1000.0
+rect_min_size = Vector2( 0, 1000 )
 
 [node name="Strength" type="HBoxContainer" parent="CenterContainer/ScrollContainer/Variables"]
 margin_right = 904.0
@@ -262,10 +263,76 @@ hint_tooltip = "Deletes the Value from the savefile, thus recreating it with its
 theme = ExtResource( 1 )
 text = "Reset"
 
-[node name="Buttons" type="HBoxContainer" parent="CenterContainer/ScrollContainer/Variables"]
+[node name="Perk" type="HBoxContainer" parent="CenterContainer/ScrollContainer/Variables"]
 margin_top = 665.0
 margin_right = 904.0
-margin_bottom = 765.0
+margin_bottom = 756.0
+
+[node name="Label" type="Label" parent="CenterContainer/ScrollContainer/Variables/Perk"]
+margin_top = 5.0
+margin_right = 200.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 200, 30 )
+theme = ExtResource( 1 )
+text = "Perk:"
+align = 1
+valign = 1
+
+[node name="LineEdit" type="LineEdit" parent="CenterContainer/ScrollContainer/Variables/Perk"]
+margin_left = 204.0
+margin_right = 604.0
+margin_bottom = 91.0
+rect_min_size = Vector2( 400, 30 )
+theme = ExtResource( 1 )
+expand_to_text_length = true
+placeholder_text = "Not available"
+
+[node name="Button" type="Button" parent="CenterContainer/ScrollContainer/Variables/Perk"]
+margin_left = 608.0
+margin_right = 808.0
+margin_bottom = 91.0
+rect_min_size = Vector2( 200, 30 )
+hint_tooltip = "Deletes the Value from the savefile, thus recreating it with its default value."
+theme = ExtResource( 1 )
+text = "Reset"
+
+[node name="Ability" type="HBoxContainer" parent="CenterContainer/ScrollContainer/Variables"]
+margin_top = 760.0
+margin_right = 904.0
+margin_bottom = 851.0
+
+[node name="Label" type="Label" parent="CenterContainer/ScrollContainer/Variables/Ability"]
+margin_top = 5.0
+margin_right = 200.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 200, 30 )
+theme = ExtResource( 1 )
+text = "Ability:"
+align = 1
+valign = 1
+
+[node name="LineEdit" type="LineEdit" parent="CenterContainer/ScrollContainer/Variables/Ability"]
+margin_left = 204.0
+margin_right = 604.0
+margin_bottom = 91.0
+rect_min_size = Vector2( 400, 30 )
+theme = ExtResource( 1 )
+expand_to_text_length = true
+placeholder_text = "Not available"
+
+[node name="Button" type="Button" parent="CenterContainer/ScrollContainer/Variables/Ability"]
+margin_left = 608.0
+margin_right = 808.0
+margin_bottom = 91.0
+rect_min_size = Vector2( 200, 30 )
+hint_tooltip = "Deletes the Value from the savefile, thus recreating it with its default value."
+theme = ExtResource( 1 )
+text = "Reset"
+
+[node name="Buttons" type="HBoxContainer" parent="CenterContainer/ScrollContainer/Variables"]
+margin_top = 855.0
+margin_right = 904.0
+margin_bottom = 955.0
 
 [node name="Save" type="Button" parent="CenterContainer/ScrollContainer/Variables/Buttons"]
 margin_right = 200.0
@@ -322,6 +389,8 @@ dialog_text = "Saved Savefile at:"
 [connection signal="pressed" from="CenterContainer/ScrollContainer/Variables/Upgraded/Button" to="." method="delete" binds= [ "Upgraded" ]]
 [connection signal="pressed" from="CenterContainer/ScrollContainer/Variables/Volume1/Button" to="." method="delete" binds= [ "Vol1" ]]
 [connection signal="pressed" from="CenterContainer/ScrollContainer/Variables/Volume2/Button" to="." method="delete" binds= [ "Vol2" ]]
+[connection signal="pressed" from="CenterContainer/ScrollContainer/Variables/Perk/Button" to="." method="delete" binds= [ "Perk" ]]
+[connection signal="pressed" from="CenterContainer/ScrollContainer/Variables/Ability/Button" to="." method="delete" binds= [ "Ability" ]]
 [connection signal="pressed" from="CenterContainer/ScrollContainer/Variables/Buttons/Save" to="." method="_on_Save_pressed"]
 [connection signal="pressed" from="CenterContainer/ScrollContainer/Variables/Buttons/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="CenterContainer/ScrollContainer/Variables/Buttons/Reset" to="." method="_on_Reset_pressed"]
