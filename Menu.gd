@@ -6,6 +6,7 @@ extends Node2D
 var LookForEnemy = false
 var LookForEnemyCount = 0
 var randomized = 1
+var ResetCount = 0
 
 
 
@@ -244,5 +245,13 @@ func _on_DeleteGame_pressed():
 	pass # Replace with function body.
 
 
+
 func _on_Debug_pressed():
 	get_tree().change_scene("res://Debug Menu.tscn")
+
+func _on_Reset_Panel_pressed():
+	ResetCount += 1
+	if ResetCount == 5:
+		get_node("DeleteGame").visible = true
+	
+

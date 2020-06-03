@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://PixelOperatorHB.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Menu.gd" type="Script" id=2]
@@ -114,6 +114,21 @@ animations = [ {
 "name": "default",
 "speed": 0.2
 } ]
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 2 )
@@ -261,6 +276,7 @@ margin_left = 1504.0
 margin_top = 1184.0
 margin_right = 1664.0
 margin_bottom = 1248.0
+
 theme = ExtResource( 8 )
 custom_fonts/font = SubResource( 8 )
 text = "50 rp"
@@ -291,7 +307,7 @@ position = Vector2( 96, 128 )
 scale = Vector2( 10.1818, 10.1818 )
 frames = ExtResource( 5 )
 animation = "Legend"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Rank" type="Label" parent="."]
@@ -343,7 +359,7 @@ margin_top = 160.0
 margin_right = 675.0
 margin_bottom = 221.0
 custom_fonts/font = SubResource( 14 )
-text = "Ver. 0.2.0"
+text = "Ver. 0.2.1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -482,7 +498,6 @@ material = SubResource( 18 )
 position = Vector2( 1085, 736 )
 scale = Vector2( 17.5, 22 )
 frames = ExtResource( 4 )
-frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -501,29 +516,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Cursor" type="Sprite" parent="."]
-texture = ExtResource( 7 )
-
 [node name="sleepuwu" type="AnimatedSprite" parent="."]
 position = Vector2( 864, 864 )
 scale = Vector2( 19.75, 18.75 )
 frames = SubResource( 19 )
 animation = "awake"
-frame = 1
 playing = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Tree1" type="AnimatedSprite" parent="."]
 position = Vector2( 160, 576 )
 scale = Vector2( 21.25, 20.25 )
 frames = SubResource( 20 )
-frame = 1
 playing = true
 
 [node name="Tree2" type="AnimatedSprite" parent="."]
 position = Vector2( 1472, 608 )
 scale = Vector2( 17.4062, 17.5312 )
 frames = SubResource( 20 )
-frame = 1
 playing = true
 
 [node name="DeleteGame" type="Button" parent="."]
@@ -549,6 +561,21 @@ text = "Debug"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Reset Panel" type="Button" parent="."]
+margin_left = 581.867
+margin_top = 668.12
+margin_right = 1110.87
+margin_bottom = 1030.12
+custom_styles/hover = SubResource( 21 )
+custom_styles/pressed = SubResource( 22 )
+custom_styles/focus = SubResource( 23 )
+custom_styles/disabled = SubResource( 24 )
+custom_styles/normal = SubResource( 25 )
+
+[node name="Cursor" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+
 [connection signal="pressed" from="EXIT" to="." method="_on_EXIT_pressed"]
 [connection signal="pressed" from="Fullscreen" to="." method="_on_Fullscreen_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
@@ -561,4 +588,7 @@ __meta__ = {
 [connection signal="pressed" from="Cosm" to="." method="_on_Cosm_pressed"]
 [connection signal="pressed" from="Perks" to="." method="_on_Perks_pressed"]
 [connection signal="pressed" from="DeleteGame" to="." method="_on_DeleteGame_pressed"]
+
 [connection signal="pressed" from="Debug" to="." method="_on_Debug_pressed"]
+
+[connection signal="pressed" from="Reset Panel" to="." method="_on_Reset_Panel_pressed"]
