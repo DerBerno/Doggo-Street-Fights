@@ -66,6 +66,7 @@
 [ext_resource path="res://Textures/Heli1.png" type="Texture" id=64]
 [ext_resource path="res://Textures/Heli2.png" type="Texture" id=65]
 
+
 [sub_resource type="DynamicFont" id=1]
 size = 70
 outline_size = 5
@@ -654,7 +655,6 @@ position = Vector2( 1888, 32 )
 scale = Vector2( 5, 5 )
 frames = ExtResource( 44 )
 animation = "Challenger"
-frame = 1
 playing = true
 
 [node name="DoggoWings" type="AnimatedSprite" parent="."]
@@ -819,7 +819,9 @@ curve = SubResource( 41 )
 
 [node name="HeliFollow" type="PathFollow2D" parent="HeliPath"]
 position = Vector2( -171.486, 220.787 )
+
 rotation = 0.004362
+
 
 [node name="Heli" type="AnimatedSprite" parent="HeliPath/HeliFollow"]
 position = Vector2( 75.6412, 34.8863 )
