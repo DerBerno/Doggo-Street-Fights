@@ -6,6 +6,7 @@ extends Node2D
 var LookForEnemy = false
 var LookForEnemyCount = 0
 var randomized = 1
+var ResetCount = 0
 
 
 
@@ -252,4 +253,12 @@ func _on_Perks_pressed():
 
 func _on_DeleteGame_pressed():
 	Global.delete()
+	pass # Replace with function body.
+
+
+func _on_Reset_Panel_pressed():
+	ResetCount += 1
+	if ResetCount == 5:
+		get_node("DeleteGame").visible = true
+	
 	pass # Replace with function body.
