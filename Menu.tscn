@@ -256,6 +256,7 @@ __meta__ = {
 }
 
 [node name="RP 50" type="Button" parent="."]
+visible = false
 margin_left = 1504.0
 margin_top = 1184.0
 margin_right = 1664.0
@@ -268,6 +269,7 @@ __meta__ = {
 }
 
 [node name="LP 50" type="Button" parent="."]
+visible = false
 margin_left = 2240.0
 margin_top = 448.0
 margin_right = 2493.0
@@ -316,6 +318,7 @@ __meta__ = {
 position = Vector2( 1824, 96 )
 scale = Vector2( 10.7917, 10.25 )
 frames = SubResource( 12 )
+frame = 1
 playing = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -434,6 +437,7 @@ __meta__ = {
 }
 
 [node name="Multiplayer" type="Button" parent="."]
+visible = false
 margin_left = 2240.0
 margin_top = 224.0
 margin_right = 2560.0
@@ -444,6 +448,7 @@ __meta__ = {
 }
 
 [node name="Cosm" type="Button" parent="."]
+visible = false
 margin_left = 2240.0
 margin_top = 320.0
 margin_right = 2464.0
@@ -532,6 +537,18 @@ text = "Delete Save Data"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Debug" type="Button" parent="."]
+visible = false
+margin_left = 832.0
+margin_top = 552.0
+margin_right = 1180.0
+margin_bottom = 600.0
+theme = ExtResource( 8 )
+text = "Debug"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="EXIT" to="." method="_on_EXIT_pressed"]
 [connection signal="pressed" from="Fullscreen" to="." method="_on_Fullscreen_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
@@ -544,3 +561,4 @@ __meta__ = {
 [connection signal="pressed" from="Cosm" to="." method="_on_Cosm_pressed"]
 [connection signal="pressed" from="Perks" to="." method="_on_Perks_pressed"]
 [connection signal="pressed" from="DeleteGame" to="." method="_on_DeleteGame_pressed"]
+[connection signal="pressed" from="Debug" to="." method="_on_Debug_pressed"]

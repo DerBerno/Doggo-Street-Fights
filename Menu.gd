@@ -89,7 +89,6 @@ func _ready():
 	get_node("Label").text = "Cost: " + str(50 * Global.Upgraded) 
 	
 	get_node("LabP").text = str(Global.LabPoints)
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -117,8 +116,6 @@ func _input(event):
 
 func _on_Button_pressed():
 	LookForEnemy = true
-	
-	pass # Replace with function body.
 
 
 func _on_Research_pressed():
@@ -202,56 +199,50 @@ func research():
 
 func _on_RP_50_pressed():
 	Global.Rank += 50
-	pass # Replace with function body.
 
 
 func _on_LP_50_pressed():
 	Global.LabPoints += 1000000
-	pass # Replace with function body.
 
 
 func _on_mnz_pressed():
 	Global.create_save()
-	pass # Replace with function body.
 
 
 func _on_HSlider2_value_changed(value):
 	AudioServer.set_bus_volume_db(1, value -100)
 	Global.save("Vol2", value)
-	pass # Replace with function body.
 
 
 func _on_HSlider_value_changed(value):
 	AudioServer.set_bus_volume_db(2, value -100)
 	Global.save("Vol1", value)
-	pass # Replace with function body.
 
 
 func _on_Multiplayer_pressed():
 	get_tree().change_scene("res://mp/multiplayer.tscn")
-	pass # Replace with function body.
 
 
 func _on_Cosm_pressed():
 	get_tree().change_scene("res://CosmShop.tscn")
-	pass # Replace with function body.
 
 
 func _on_Fullscreen_pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
-	pass # Replace with function body.
 
 
 func _on_EXIT_pressed():
 	get_tree().quit()
-	pass # Replace with function body.
 
 
 func _on_Perks_pressed():
 	get_tree().change_scene("res://Perks.tscn")
-	pass # Replace with function body.
 
 
 func _on_DeleteGame_pressed():
 	Global.delete()
 	pass # Replace with function body.
+
+
+func _on_Debug_pressed():
+	get_tree().change_scene("res://Debug Menu.tscn")
