@@ -32,8 +32,8 @@ func _ready():
 		save("Upgraded", defaults["Upgraded"])
 		save("Vol1", defaults["Vol1"])
 		save("Vol2", defaults["Vol2"])
-    save("Perk", defaults["Perk"])
-    save("Ability", defaults["Ability"])
+	save("Perk", defaults["Perk"])
+	save("Ability", defaults["Ability"])
 	
 	Strength = (Global.read_savegame("Strength"))
 	Rank = (Global.read_savegame("Rank"))
