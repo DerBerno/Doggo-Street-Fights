@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=2]
+[gd_scene load_steps=108 format=2]
 
 [ext_resource path="res://Arena.gd" type="Script" id=1]
 [ext_resource path="res://Hp_Fg.tres" type="StyleBox" id=2]
@@ -62,6 +62,9 @@
 [ext_resource path="res://2x2.png" type="Texture" id=60]
 [ext_resource path="res://2x3.png" type="Texture" id=61]
 [ext_resource path="res://2x1.png" type="Texture" id=62]
+[ext_resource path="res://Textures/Heli1.png" type="Texture" id=63]
+[ext_resource path="res://Textures/Heli2.png" type="Texture" id=64]
+[ext_resource path="res://Textures/Heli3.png" type="Texture" id=65]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -356,6 +359,19 @@ bg_color = Color( 0.188235, 0.188235, 0.188235, 1 )
 size = 35
 font_data = ExtResource( 4 )
 
+[sub_resource type="Curve2D" id=41]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -171.486, 220.787, 0, 0, 0, 0, 2297.8, 231.579, 0, 0, 0, 0, 2362.89, -1006.8, 0, 0, 0, 0, -797.625, -1110.01, 0, 0, 0, 0, -169.985, 217.8 )
+}
+
+[sub_resource type="SpriteFrames" id=42]
+animations = [ {
+"frames": [ ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
 [node name="Arena" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -638,7 +654,6 @@ position = Vector2( 1888, 32 )
 scale = Vector2( 5, 5 )
 frames = ExtResource( 44 )
 animation = "Challenger"
-frame = 1
 playing = true
 
 [node name="DoggoWings" type="AnimatedSprite" parent="."]
@@ -646,7 +661,7 @@ position = Vector2( 256, 576 )
 scale = Vector2( 26, 26 )
 frames = ExtResource( 45 )
 animation = "02"
-frame = 2
+frame = 3
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -705,9 +720,10 @@ curve = SubResource( 33 )
 [node name="PathFollow2D" type="PathFollow2D" parent="TextureRect/Path2D"]
 position = Vector2( 128, 512 )
 rotation = -1.53827
+rotate = false
 
 [node name="Sun" type="Sprite" parent="TextureRect/Path2D/PathFollow2D"]
-rotation = 1.53827
+rotation = 1.53764
 scale = Vector2( 14.5, 14.5 )
 texture = ExtResource( 52 )
 
@@ -741,9 +757,6 @@ frames = SubResource( 35 )
 position = Vector2( 1920, 550 )
 scale = Vector2( 14.25, 13.25 )
 frames = SubResource( 35 )
-
-[node name="Cursor" type="Sprite" parent="."]
-texture = ExtResource( 46 )
 
 [node name="Clouds" type="Node2D" parent="."]
 
@@ -799,6 +812,23 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HeliPath" type="Path2D" parent="."]
+curve = SubResource( 41 )
+
+[node name="HeliFollow" type="PathFollow2D" parent="HeliPath"]
+position = Vector2( -171.486, 220.787 )
+rotation = 0.00436971
+
+[node name="Heli" type="AnimatedSprite" parent="HeliPath/HeliFollow"]
+position = Vector2( 75.6412, 34.8863 )
+scale = Vector2( 10.5691, 10.3335 )
+frames = SubResource( 42 )
+frame = 2
+playing = true
+
+[node name="Cursor" type="Sprite" parent="."]
+texture = ExtResource( 46 )
 [connection signal="pressed" from="Tail Kick" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Heal1" to="." method="_on_Simple_Heal_pressed"]
 [connection signal="pressed" from="Punch" to="." method="_on_Power_Punch_pressed"]
