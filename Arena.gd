@@ -209,7 +209,7 @@ func _ready():
 func _process(delta):
 	get_node("Clouds/C1/C1follow").unit_offset += 0.027 * delta * 0.5
 	get_node("Clouds/C1/C2follow").unit_offset += 0.05 * delta * 0.5
-	
+	get_node("HeliPath/HeliFollow").unit_offset += 0.05 * delta
 
 	#tween.interpolate_property($TextureRect, "modulate", Color(1,1,1), Color(0.5, 0.5, 0.5), 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	#tween.start()
@@ -324,6 +324,10 @@ func Turn(DoggoAction):
 	
 	if get_node("DoggoLife").value == 0 or get_node("CattoLife").value == 0:
 		randomized = 0
+		
+	if AbilityActivated == true and AbilityOff == false:
+		if Global.SpAttack == 5:
+			get_node("DoggoLife").value += 2 * Strength
 	
 	
 	
@@ -434,8 +438,8 @@ func Turn(DoggoAction):
 			get_node("Energy").value *= 2
 			AbilityActivated = false
 			AbilityOff = true
-		if Global.SpAttack == 5:
-			get_node("DoggoLife").value += 1.5 * Strength
+	
+			
 		
 	
 	if DoggoAction == "Attack" and get_node("DoggoLife").value > 0 :

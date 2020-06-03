@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=2]
+[gd_scene load_steps=108 format=2]
 
 [ext_resource path="res://Arena.gd" type="Script" id=1]
 [ext_resource path="res://Hp_Fg.tres" type="StyleBox" id=2]
@@ -62,6 +62,9 @@
 [ext_resource path="res://2x2.png" type="Texture" id=60]
 [ext_resource path="res://2x3.png" type="Texture" id=61]
 [ext_resource path="res://2x1.png" type="Texture" id=62]
+[ext_resource path="res://Textures/Heli3.png" type="Texture" id=63]
+[ext_resource path="res://Textures/Heli1.png" type="Texture" id=64]
+[ext_resource path="res://Textures/Heli2.png" type="Texture" id=65]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -181,19 +184,9 @@ animations = [ {
 "name": "Knife",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "Sleep",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 17 ) ],
-"loop": true,
-"name": "Heal",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 9 ) ],
 "loop": false,
-"name": "Kill",
+"name": "Fist",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 10 ), ExtResource( 5 ) ],
@@ -201,42 +194,47 @@ animations = [ {
 "name": "Fire",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "Heal",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "cat",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": false,
-"name": "Fist",
+"name": "Kill",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Sleep",
 "speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=26]
 animations = [ {
-"frames": [ ExtResource( 32 ), ExtResource( 31 ) ],
-"loop": true,
-"name": "Sleep",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 26 ), ExtResource( 25 ), ExtResource( 26 ) ],
 "loop": false,
 "name": "Tailkick",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 23 ), ExtResource( 57 ), ExtResource( 23 ), ExtResource( 19 ) ],
-"loop": false,
-"name": "Punch",
-"speed": 10.0
+"frames": [ ExtResource( 32 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "Sleep",
+"speed": 3.0
 }, {
 "frames": [ ExtResource( 24 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "Doggo",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 30 ), ExtResource( 30 ), ExtResource( 30 ), ExtResource( 26 ) ],
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 20 ) ],
 "loop": false,
-"name": "Bepis",
+"name": "Snacc",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 26 ) ],
@@ -244,22 +242,27 @@ animations = [ {
 "name": "Thorns",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 20 ) ],
-"loop": false,
-"name": "Snacc",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 26 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 26 ) ],
 "loop": false,
 "name": "Fireball",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 23 ), ExtResource( 57 ), ExtResource( 23 ), ExtResource( 19 ) ],
+"loop": false,
+"name": "Punch",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 30 ), ExtResource( 30 ), ExtResource( 30 ), ExtResource( 26 ) ],
+"loop": false,
+"name": "Bepis",
 "speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=27]
 animations = [ {
-"frames": [ ExtResource( 55 ), ExtResource( 56 ) ],
+"frames": [ ExtResource( 50 ), ExtResource( 54 ) ],
 "loop": true,
-"name": "hat2",
+"name": "hat1",
 "speed": 5.0
 }, {
 "frames": [  ],
@@ -267,9 +270,9 @@ animations = [ {
 "name": "0ff",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 50 ), ExtResource( 54 ) ],
+"frames": [ ExtResource( 55 ), ExtResource( 56 ) ],
 "loop": true,
-"name": "hat1",
+"name": "hat2",
 "speed": 5.0
 } ]
 
@@ -355,6 +358,19 @@ bg_color = Color( 0.188235, 0.188235, 0.188235, 1 )
 [sub_resource type="DynamicFont" id=40]
 size = 35
 font_data = ExtResource( 4 )
+
+[sub_resource type="Curve2D" id=41]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -171.486, 220.787, 0, 0, 0, 0, 2297.8, 231.579, 0, 0, 0, 0, 2362.89, -1006.8, 0, 0, 0, 0, -797.625, -1110.01, 0, 0, 0, 0, -169.985, 217.8 )
+}
+
+[sub_resource type="SpriteFrames" id=42]
+animations = [ {
+"frames": [ ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
 
 [node name="Arena" type="Node2D"]
 script = ExtResource( 1 )
@@ -646,7 +662,7 @@ position = Vector2( 256, 576 )
 scale = Vector2( 26, 26 )
 frames = ExtResource( 45 )
 animation = "02"
-frame = 2
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -705,9 +721,10 @@ curve = SubResource( 33 )
 [node name="PathFollow2D" type="PathFollow2D" parent="TextureRect/Path2D"]
 position = Vector2( 128, 512 )
 rotation = -1.53827
+rotate = false
 
 [node name="Sun" type="Sprite" parent="TextureRect/Path2D/PathFollow2D"]
-rotation = 1.53827
+rotation = 1.53764
 scale = Vector2( 14.5, 14.5 )
 texture = ExtResource( 52 )
 
@@ -741,9 +758,6 @@ frames = SubResource( 35 )
 position = Vector2( 1920, 550 )
 scale = Vector2( 14.25, 13.25 )
 frames = SubResource( 35 )
-
-[node name="Cursor" type="Sprite" parent="."]
-texture = ExtResource( 46 )
 
 [node name="Clouds" type="Node2D" parent="."]
 
@@ -799,6 +813,23 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HeliPath" type="Path2D" parent="."]
+curve = SubResource( 41 )
+
+[node name="HeliFollow" type="PathFollow2D" parent="HeliPath"]
+position = Vector2( -171.486, 220.787 )
+rotation = 0.004362
+
+[node name="Heli" type="AnimatedSprite" parent="HeliPath/HeliFollow"]
+position = Vector2( 75.6412, 34.8863 )
+scale = Vector2( 10.5691, 10.3335 )
+frames = SubResource( 42 )
+frame = 1
+playing = true
+
+[node name="Cursor" type="Sprite" parent="."]
+texture = ExtResource( 46 )
 [connection signal="pressed" from="Tail Kick" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Heal1" to="." method="_on_Simple_Heal_pressed"]
 [connection signal="pressed" from="Punch" to="." method="_on_Power_Punch_pressed"]

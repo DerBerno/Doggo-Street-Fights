@@ -271,12 +271,10 @@ __meta__ = {
 }
 
 [node name="RP 50" type="Button" parent="."]
-visible = false
-margin_left = 1504.0
-margin_top = 1184.0
-margin_right = 1664.0
-margin_bottom = 1248.0
-
+margin_left = 2265.68
+margin_top = 529.465
+margin_right = 2425.68
+margin_bottom = 593.465
 theme = ExtResource( 8 )
 custom_fonts/font = SubResource( 8 )
 text = "50 rp"
@@ -285,11 +283,10 @@ __meta__ = {
 }
 
 [node name="LP 50" type="Button" parent="."]
-visible = false
-margin_left = 2240.0
-margin_top = 448.0
-margin_right = 2493.0
-margin_bottom = 512.0
+margin_left = 2255.58
+margin_top = 434.364
+margin_right = 2508.58
+margin_bottom = 498.364
 theme = ExtResource( 8 )
 custom_fonts/font = SubResource( 9 )
 text = "one million lp"
@@ -334,7 +331,6 @@ __meta__ = {
 position = Vector2( 1824, 96 )
 scale = Vector2( 10.7917, 10.25 )
 frames = SubResource( 12 )
-frame = 1
 playing = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -453,7 +449,6 @@ __meta__ = {
 }
 
 [node name="Multiplayer" type="Button" parent="."]
-visible = false
 margin_left = 2240.0
 margin_top = 224.0
 margin_right = 2560.0
@@ -464,7 +459,6 @@ __meta__ = {
 }
 
 [node name="Cosm" type="Button" parent="."]
-visible = false
 margin_left = 2240.0
 margin_top = 320.0
 margin_right = 2464.0
@@ -498,6 +492,7 @@ material = SubResource( 18 )
 position = Vector2( 1085, 736 )
 scale = Vector2( 17.5, 22 )
 frames = ExtResource( 4 )
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -521,6 +516,7 @@ position = Vector2( 864, 864 )
 scale = Vector2( 19.75, 18.75 )
 frames = SubResource( 19 )
 animation = "awake"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -530,12 +526,14 @@ __meta__ = {
 position = Vector2( 160, 576 )
 scale = Vector2( 21.25, 20.25 )
 frames = SubResource( 20 )
+frame = 1
 playing = true
 
 [node name="Tree2" type="AnimatedSprite" parent="."]
 position = Vector2( 1472, 608 )
 scale = Vector2( 17.4062, 17.5312 )
 frames = SubResource( 20 )
+frame = 1
 playing = true
 
 [node name="DeleteGame" type="Button" parent="."]
@@ -546,18 +544,6 @@ margin_right = 1180.0
 margin_bottom = 528.0
 theme = ExtResource( 8 )
 text = "Delete Save Data"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Debug" type="Button" parent="."]
-visible = false
-margin_left = 832.0
-margin_top = 552.0
-margin_right = 1180.0
-margin_bottom = 600.0
-theme = ExtResource( 8 )
-text = "Debug"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -575,7 +561,6 @@ custom_styles/normal = SubResource( 25 )
 
 [node name="Cursor" type="Sprite" parent="."]
 texture = ExtResource( 7 )
-
 [connection signal="pressed" from="EXIT" to="." method="_on_EXIT_pressed"]
 [connection signal="pressed" from="Fullscreen" to="." method="_on_Fullscreen_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
@@ -588,7 +573,4 @@ texture = ExtResource( 7 )
 [connection signal="pressed" from="Cosm" to="." method="_on_Cosm_pressed"]
 [connection signal="pressed" from="Perks" to="." method="_on_Perks_pressed"]
 [connection signal="pressed" from="DeleteGame" to="." method="_on_DeleteGame_pressed"]
-
-[connection signal="pressed" from="Debug" to="." method="_on_Debug_pressed"]
-
 [connection signal="pressed" from="Reset Panel" to="." method="_on_Reset_Panel_pressed"]
