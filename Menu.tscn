@@ -276,7 +276,6 @@ margin_left = 1504.0
 margin_top = 1184.0
 margin_right = 1664.0
 margin_bottom = 1248.0
-
 theme = ExtResource( 8 )
 custom_fonts/font = SubResource( 8 )
 text = "50 rp"
@@ -333,6 +332,7 @@ __meta__ = {
 position = Vector2( 1824, 96 )
 scale = Vector2( 10.7917, 10.25 )
 frames = SubResource( 12 )
+frame = 1
 playing = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -550,6 +550,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Debug" type="Button" parent="."]
+visible = false
+margin_left = 828.0
+margin_top = 552.0
+margin_right = 1176.0
+margin_bottom = 600.0
+theme = ExtResource( 8 )
+text = "Debug"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Reset Panel" type="Button" parent="."]
 margin_left = 581.867
 margin_top = 668.12
@@ -576,5 +588,4 @@ texture = ExtResource( 7 )
 [connection signal="pressed" from="Perks" to="." method="_on_Perks_pressed"]
 [connection signal="pressed" from="DeleteGame" to="." method="_on_DeleteGame_pressed"]
 [connection signal="pressed" from="Debug" to="." method="_on_Debug_pressed"]
-
 [connection signal="pressed" from="Reset Panel" to="." method="_on_Reset_Panel_pressed"]
