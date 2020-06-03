@@ -14,6 +14,7 @@ var dopopup = false
 var Perk = 0
 var SpAttack = 0
 
+const defaults = {"Strength":1,"Rank":0,"Attacks":2,"LabPoints":0,"Upgraded":0,"Vol1":100,"Vol2":100,"Perk":0,"Ability":0}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,15 +24,16 @@ func _ready():
 	if not savegame.file_exists(save_path):
 		dopopup = true
 		create_save()
-		save("Strength", 1)
-		save("Rank", 0)
-		save("Attacks", 2)
-		save("LabPoints", 0)
-		save("Upgraded", 1)
-		save("Vol1", 100)
-		save("Vol2", 100)
-		save("Perk", 0)
-		save("Ability", 0)
+
+		save("Strength", defaults["Strength"])
+		save("Rank", defaults["Rank"])
+		save("Attacks", defaults["Attacks"])
+		save("LabPoints", defaults["LabPoints"])
+		save("Upgraded", defaults["Upgraded"])
+		save("Vol1", defaults["Vol1"])
+		save("Vol2", defaults["Vol2"])
+    save("Perk", defaults["Perk"])
+    save("Ability", defaults["Ability"])
 	
 	Strength = (Global.read_savegame("Strength"))
 	Rank = (Global.read_savegame("Rank"))
@@ -70,14 +72,6 @@ func read_savegame(Name):
 		save("Ability", 0)
 		return 0
 		
-func delete():
-	save("Strength", 1)
-	save("Rank", 0)
-	save("Attacks", 2)
-	save("LabPoints", 0)
-	save("Upgraded", 1)
-	save("Vol1", 100)
-	save("Vol2", 100)
 	
 func refresh():
 	Global.Strength = read_savegame("Strength")
@@ -91,10 +85,15 @@ func refresh():
 	Global.Ability = read_savegame("Ability")
 	
 	
-		
 	
+func delete():
+	save("Strength", defaults["Strength"])
+	save("Rank", defaults["Rank"])
+	save("Attacks", defaults["Attacks"])
+	save("LabPoints", defaults["LabPoints"])
+	save("Upgraded", defaults["Upgraded"])
+	save("Vol1", defaults["Vol1"])
+	save("Vol2", defaults["Vol2"])
+  save("Perk", defaults["Perk"])
+  save("Ability", defaults["Ability"])
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
