@@ -595,9 +595,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Cursor" type="Sprite" parent="."]
-texture = ExtResource( 13 )
-
 [node name="Button" type="Button" parent="."]
 margin_left = 736.0
 margin_top = 960.0
@@ -608,6 +605,9 @@ text = " Accept & Return "
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Cursor" type="Sprite" parent="."]
+texture = ExtResource( 13 )
 [connection signal="pressed" from="Menu/P1/CB1" to="." method="_on_CB1_pressed"]
 [connection signal="pressed" from="Menu/P2/CB2" to="." method="_on_CB2_pressed"]
 [connection signal="pressed" from="Menu/P3/CB3" to="." method="_on_CB3_pressed"]
