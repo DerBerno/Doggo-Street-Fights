@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://doggo_1.png" type="Texture" id=1]
+[ext_resource path="res://doggo_2.png" type="Texture" id=2]
+
+[sub_resource type="TileSet" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 2 )
+format = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 339.976, 217.621 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 1 )
+speed_scale = 2.0
+playing = true
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite"]
