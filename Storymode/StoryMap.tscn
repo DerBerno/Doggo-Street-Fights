@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://doggo_1.png" type="Texture" id=1]
 [ext_resource path="res://doggo_2.png" type="Texture" id=2]
@@ -11,10 +11,13 @@
 [ext_resource path="res://DoggoMove/DoggoUp1.png" type="Texture" id=9]
 [ext_resource path="res://DoggoMove/DoggoRL1.png" type="Texture" id=10]
 [ext_resource path="res://DoggoMove/DoggoUp2.png" type="Texture" id=11]
+[ext_resource path="res://addons/dialogue_tree/scripts/dialogue.gd" type="Script" id=12]
+[ext_resource path="res://Storymode/StoryMap.gd" type="Script" id=13]
+[ext_resource path="res://addons/dialogue_tree/resource/dialogue_tree.gd" type="Script" id=14]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 245, 235, 0, 0, 0, 0, 355, 235, 0, 0, 0, 0, 355, 115, 0, 0, 0, 0, 245, 115, 0, 0, 0, 0, 245, 165, 0, 0, 0, 0, 100, 165, 0, 0, 0, 0, 90, 165, 0, 0, 0, 0, 90, 135, 0, 0, 0, 0, 40, 135, 0, 0, 0, 0, 40, 200, 0, 0, 0, 0, 90, 200, 0, 0, 0, 0, 90, 175, 0, 0, 0, 0, 245, 175, 0, 0, 0, 0, 245, 235 )
+"points": PoolVector2Array( -4.55667, -0.427188, 4.55667, 0.427188, 245, 235, -1.70875, 2.27833, 1.70875, -2.27833, 355, 235, 4.41427, 2.27833, -4.41427, -2.27833, 355, 115, 2.48601, -3.08265, -2.48601, 3.08265, 245, 115, 0, 0, 0, 0, 245, 165, 16.3783, 0.368052, -16.3783, -0.368052, 100, 165, 18.4612, 6.51483, -18.4612, -6.51483, 80, 140, 8.40505, -4.71943, -8.40505, 4.71943, 45, 140, -12.0305, -8.15628, 12.0305, 8.15628, 45, 195, -7.13675, 4.28205, 7.13675, -4.28205, 85, 195, 0, 0, 0, 0, 90, 175, 0, 0, 0, 0, 245, 175, 0, 0, 0, 0, 245, 235 )
 }
 
 [sub_resource type="SpriteFrames" id=2]
@@ -45,7 +48,51 @@ animations = [ {
 [sub_resource type="Environment" id=4]
 ambient_light_energy = 0.0
 
+[sub_resource type="Resource" id=5]
+script = ExtResource( 14 )
+connections = [ {
+"from": "StartNode",
+"from_port": 0,
+"to": "BasicDialogue",
+"to_port": 0
+} ]
+Nodes = [ {
+"filename": "res://addons/dialogue_tree/scenes/EndNode.tscn",
+"name": "EndNode",
+"rect_size_x": 82.0,
+"rect_size_y": 55.0,
+"rect_x": 34.0,
+"rect_y": 49.75
+}, {
+"filename": "res://addons/dialogue_tree/scenes/StartNode.tscn",
+"name": "StartNode",
+"rect_size_x": 88.0,
+"rect_size_y": 55.0,
+"rect_x": 34.0,
+"rect_y": 49.75
+}, {
+"Actor": "Cat",
+"Dialogue": "Hello",
+"RefName": "Reference",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue",
+"rect_size_x": 172.0,
+"rect_size_y": 114.0,
+"rect_x": 194.0,
+"rect_y": 29.75
+} ]
+DialogueTree = {
+"dialogue": [ {
+"Actor": "Cat",
+"Dialogue": "Hello",
+"NodeName": "BasicDialogue",
+"Ref": "Reference"
+} ],
+"start_index": 0
+}
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 13 )
 
 [node name="Ground" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
@@ -99,3 +146,7 @@ __meta__ = {
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 4 )
+
+[node name="Dialogue" type="Node" parent="."]
+script = ExtResource( 12 )
+DialogueResource = SubResource( 5 )

@@ -8,7 +8,7 @@ var movementSpeed = 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 func _process(delta):
@@ -16,20 +16,26 @@ func _process(delta):
 		self.move_and_collide(Vector2(0,movementSpeed))
 		$AnimatedSprite.animation = "Downwards"
 		$CollisionShape2D.scale.x = 0.3
+		$AnimatedSprite.playing = true
 		
-	if Input.is_action_pressed("move left"):
+	elif Input.is_action_pressed("move left"):
 		self.move_and_collide(Vector2(-movementSpeed,0))
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.animation = "Sideways"
 		$CollisionShape2D.scale.x = 0.6
+		$AnimatedSprite.playing = true
 		
-	if Input.is_action_pressed("move up"):
+	elif Input.is_action_pressed("move up"):
 		self.move_and_collide(Vector2(0,-movementSpeed))
 		$AnimatedSprite.animation = "Upwards"
 		$CollisionShape2D.scale.x = 0.3
+		$AnimatedSprite.playing = true
 		
-	if Input.is_action_pressed("move right"):
+	elif Input.is_action_pressed("move right"):
 		self.move_and_collide(Vector2(movementSpeed,0))
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.animation = "Sideways"
 		$CollisionShape2D.scale.x = 0.6
+		$AnimatedSprite.playing = true
+	else:
+		$AnimatedSprite.playing = false

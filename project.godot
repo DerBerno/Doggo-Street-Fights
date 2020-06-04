@@ -36,6 +36,10 @@ window/ios/hide_home_indicator=false
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "dialogue_tree" )
+
 [input]
 
 Skip={
