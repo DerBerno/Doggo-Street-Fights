@@ -1,10 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://doggo_1.png" type="Texture" id=1]
 [ext_resource path="res://doggo_2.png" type="Texture" id=2]
 [ext_resource path="res://Storymode/Tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://Storymode/Player.gd" type="Script" id=4]
 [ext_resource path="res://Sun.png" type="Texture" id=5]
+[ext_resource path="res://DoggoMove/DoggoDown2.png" type="Texture" id=6]
+[ext_resource path="res://DoggoMove/DoggoRL2.png" type="Texture" id=7]
+[ext_resource path="res://DoggoMove/DoggoDown1.png" type="Texture" id=8]
+[ext_resource path="res://DoggoMove/DoggoUp1.png" type="Texture" id=9]
+[ext_resource path="res://DoggoMove/DoggoRL1.png" type="Texture" id=10]
+[ext_resource path="res://DoggoMove/DoggoUp2.png" type="Texture" id=11]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -13,10 +19,25 @@ _data = {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Upwards",
+"speed": 2.0
+}, {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
 "loop": true,
-"name": "default",
-"speed": 1.0
+"name": "Idle",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Sideways",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Downwards",
+"speed": 2.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -44,13 +65,13 @@ position = Vector2( 245, 235 )
 [node name="Sprite" type="Sprite" parent="Ground/Path2D/PathFollow2D"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 65, 165 )
+position = Vector2( 90, 170 )
 script = ExtResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
-frame = 1
+animation = "Idle"
 speed_scale = 2.0
 playing = true
 

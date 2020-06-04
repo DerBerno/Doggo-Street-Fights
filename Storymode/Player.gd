@@ -14,14 +14,22 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("move down"):
 		self.move_and_collide(Vector2(0,movementSpeed))
+		$AnimatedSprite.animation = "Downwards"
+		$CollisionShape2D.scale.x = 0.3
 		
 	if Input.is_action_pressed("move left"):
 		self.move_and_collide(Vector2(-movementSpeed,0))
 		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.animation = "Sideways"
+		$CollisionShape2D.scale.x = 0.6
 		
 	if Input.is_action_pressed("move up"):
 		self.move_and_collide(Vector2(0,-movementSpeed))
+		$AnimatedSprite.animation = "Upwards"
+		$CollisionShape2D.scale.x = 0.3
 		
 	if Input.is_action_pressed("move right"):
 		self.move_and_collide(Vector2(movementSpeed,0))
 		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.animation = "Sideways"
+		$CollisionShape2D.scale.x = 0.6
