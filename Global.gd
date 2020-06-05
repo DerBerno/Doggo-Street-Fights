@@ -18,9 +18,8 @@ const defaults = {"Strength":1,"Rank":0,"Attacks":2,"LabPoints":0,"Upgraded":0,"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SpAttack = read_savegame("Ability")
-	Perk = read_savegame("Perk")
-	
+	#HIER KEINEN CODE EINFÜGEN!!!!
+	#NICHT HIER SCHON AUSLESEN!!!!
 	if not savegame.file_exists(save_path):
 		dopopup = true
 		create_save()
@@ -41,6 +40,8 @@ func _ready():
 	Attacks = (Global.read_savegame("Attacks"))
 	LabPoints = (Global.read_savegame("LabPoints"))
 	Upgraded = (Global.read_savegame("Upgraded"))
+	SpAttack = read_savegame("Ability")
+	Perk = read_savegame("Perk")
 	 # Replace with function body.
 
 func create_save():
